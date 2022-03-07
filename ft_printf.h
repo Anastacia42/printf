@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 11:34:59 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/07 15:12:38 by ansilva-         ###   ########.fr       */
+/*   Created: 2022/03/03 11:32:05 by ansilva-          #+#    #+#             */
+/*   Updated: 2022/03/07 15:03:19 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putstr(char *s)
-{
-	int	i;
+# include <stdarg.h>
+# include <unistd.h>
+# include "libft/libft.h"
 
-	i = 0;
-	if (s == NULL)
-		return (i += ft_putstr("(null)"));
-	while (s[i])
-		i += ft_putchar(s[i]);
-	return (i);
-}
+int		ft_printf(const char *format, ...);
+int		ft_put_di(int n);
+int		ft_put_u(unsigned int n);
+char	*ft_put_base(unsigned int n, char *base);
+int		ft_put_pointer(void *p);
+char	*ft_put_base_hex(unsigned long address, char *base);
+int		ft_put_hex(unsigned long n, char format);
+
+#endif

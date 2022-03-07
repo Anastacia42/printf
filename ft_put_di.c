@@ -6,11 +6,11 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:26:14 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/04 14:04:07 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:02:42 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_put_di(int n)
 {

@@ -6,11 +6,11 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:31:00 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/04 16:00:43 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:16:21 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	conversion(va_list args, char format)
@@ -22,12 +22,16 @@ int	conversion(va_list args, char format)
 		i += ft_putchar((char)va_arg(args, int));
 	else if (format == 's')
 		i += ft_putstr(va_arg(args, char *));
+	else if (format == 'p')
+		i += ft_put_pointer(va_arg(args, void *));
 	else if (format == 'd' || format == 'i')
 		i += ft_put_di(va_arg(args, int));
-	else if (format == '%')
-		i += ft_putchar('%');
 	else if (format == 'u')
 		i += ft_put_u(va_arg(args, unsigned int));
+	else if (format == 'x' || format == 'X')
+		i += ft_put_hex(va_arg(args, unsigned long), format);
+	else if (format == '%')
+		i += ft_putchar('%');
 	return (i);
 }
 
@@ -37,6 +41,8 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	int		index;
 
+	if (!format)
+		return (0);
 	va_start(args, format);
 	index = 0;
 	i = 0;
@@ -52,21 +58,10 @@ int	ft_printf(const char *format, ...)
 	return (i);
 }
 
-int	main(void)
-{
-	char			c;
-	char			*s;
-	int				d;
-	int				i;
-	unsigned int	ui;
-
-	c = '0';
-	s = "string123";
-	d = 2147483647;
-	i = -2147483648;
-	ui = 12345;
-	ft_printf("Meu printf para\nc: %c\ns: %s\nporcento: %%\ndi: %d e %i\nu: %u\n", c, s, d, i, ui);
-	ft_printf("---------------\n");
-	printf("Original para\nc: %c\ns: %s\nporcento: %%\ndi: %d e %i\nu: %u\n", c, s, d, i, ui);
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0);
+// 	ft_printf("\n-----------------------\n");
+// 	printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0);
+// 	return (0);
+// }

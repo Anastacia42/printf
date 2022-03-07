@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_base.c                                      :+:      :+:    :+:   */
+/*   ft_put_pointer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 14:59:58 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/07 15:02:35 by ansilva-         ###   ########.fr       */
+/*   Created: 2022/03/07 10:53:35 by ansilva-          #+#    #+#             */
+/*   Updated: 2022/03/07 15:02:56 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_put_base(unsigned int n, char *base)
+int	ft_put_pointer(void *p)
 {
-	int				len;
-	unsigned int	nb;
+	unsigned long	address;
+	int				i;
 	char			*s;
-	size_t			len_base;
+	char			*base;
 
-	nb = n;
-	len = 0;
-	while (nb != 0)
+	i = 0;
+	if (p == NULL)
+		i += ft_putstr("0x0");
+	else
 	{
-		nb /= 10;
-		len++;
+		address = (unsigned long)p;
+		base = "0123456789abcdef";
+		s = ft_put_base_hex(address, base);
+		i += ft_putstr("0x");
+		i += ft_putstr(s);
+		free (s);
 	}
-	s = malloc(sizeof(*s) * len + 1);
-	if (s == NULL)
-		return (NULL);
-	len_base = ft_strlen(base);
-	s[len] = '\0';
-	len--;
-	while (n > 0)
-	{
-		s[len] = base[n % len_base];
-		n /= len_base;
-		len--;
-	}
-	return (s);
+	return (i);
 }

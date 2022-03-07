@@ -6,11 +6,11 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:51:28 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/04 15:19:58 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:03:03 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_put_u(unsigned int n)
 {
@@ -19,6 +19,8 @@ int	ft_put_u(unsigned int n)
 	char	*base;
 
 	i = 0;
+	if (n == 0)
+		return (i += ft_putstr("0"));
 	base = "0123456789";
 	s = ft_put_base(n, base);
 	i += ft_putstr(s);

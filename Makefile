@@ -6,12 +6,13 @@
 #    By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 11:40:26 by ansilva-          #+#    #+#              #
-#    Updated: 2022/03/04 15:14:34 by ansilva-         ###   ########.fr        #
+#    Updated: 2022/03/07 14:45:00 by ansilva-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 SRC = ft_printf ft_put_di ft_put_u ft_put_base\
+	ft_put_pointer ft_put_base_hex ft_put_hex\
 	libft/ft_putchar libft/ft_putstr libft/ft_itoa libft/ft_strlen
 
 CC = gcc
