@@ -6,7 +6,7 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:31:00 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/07 16:16:21 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:47:41 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	conversion(va_list args, char format)
 	else if (format == 'u')
 		i += ft_put_u(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
-		i += ft_put_hex(va_arg(args, unsigned long), format);
+		i += ft_put_hex(va_arg(args, int), format);
 	else if (format == '%')
 		i += ft_putchar('%');
 	return (i);
@@ -60,8 +60,8 @@ int	ft_printf(const char *format, ...)
 
 // int	main(void)
 // {
-// 	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0);
-// 	ft_printf("\n-----------------------\n");
-// 	printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0);
+// 	ft_printf("%x\n", 142456);
+// 	ft_printf("--------------------------\n");
+// 	printf("%x\n", 142456);
 // 	return (0);
 // }

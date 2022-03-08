@@ -6,7 +6,7 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:32:05 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/07 15:03:19 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:37:51 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		ft_put_di(int n);
 int		ft_put_u(unsigned int n);
 char	*ft_put_base(unsigned int n, char *base);
 int		ft_put_pointer(void *p);
-char	*ft_put_base_hex(unsigned long address, char *base);
-int		ft_put_hex(unsigned long n, char format);
+char	*ft_put_base_pointer(unsigned long address, char *base);
+int		ft_put_hex(unsigned int n, char format);
+char	*ft_put_base_hex(unsigned int nb, char *base);
 
 #endif
