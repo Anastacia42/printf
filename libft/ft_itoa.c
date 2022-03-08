@@ -6,11 +6,12 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:01:19 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/02 10:26:47 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:32:19 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	get_len_n(long nb)
 {

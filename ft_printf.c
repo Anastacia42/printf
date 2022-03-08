@@ -6,7 +6,7 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:31:00 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/08 14:47:41 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:02:24 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ int	ft_printf(const char *format, ...)
 	return (i);
 }
 
-// int	main(void)
-// {
-// 	ft_printf("%x\n", 142456);
-// 	ft_printf("--------------------------\n");
-// 	printf("%x\n", 142456);
-// 	return (0);
-// }
+int	main(void)
+{
+	ft_printf("%5%\n");
+	ft_printf("--------------------------\n");
+	printf("%5%\n");
+	return (0);
+}

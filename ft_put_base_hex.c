@@ -6,11 +6,12 @@
 /*   By: ansilva- <ansilva-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:58:15 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/03/08 14:37:25 by ansilva-         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:42:16 by ansilva-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 char	*ft_put_base_hex(unsigned int nb, char *base)
 {
@@ -30,11 +31,11 @@ char	*ft_put_base_hex(unsigned int nb, char *base)
 	s = malloc(sizeof(*s) * (len + 1));
 	if (s == NULL)
 		return (NULL);
+	s[len] = '\0';
 	while (nb > 0)
 	{
 		s[--len] = base[nb % len_base];
 		nb /= len_base;
 	}
-	s[len_base - 1] = '\0';
 	return (s);
 }
